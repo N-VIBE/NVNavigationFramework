@@ -1,0 +1,11 @@
+framework module NVNavigationKit {
+  umbrella header "NVNavigationKit.h"
+  export *
+
+  module * { export * }
+}
+
+module NVNavigationKit.Swift {
+  header "NVNavigationKit-Swift.h"
+  requires objc
+}
