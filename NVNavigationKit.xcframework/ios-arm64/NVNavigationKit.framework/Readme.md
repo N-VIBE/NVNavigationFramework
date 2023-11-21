@@ -7,7 +7,7 @@ xcodebuild archive \
 -sdk iphoneos \
 -archivePath archives/NVNavigationKit-iphoneos.xcarchive \
 BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
-SKIP_INSTALL=NO \
+SKIP_INSTALL=NO
 
 #  BUILD SIMULATOR
 
@@ -18,7 +18,7 @@ xcodebuild archive \
 -sdk iphonesimulator \
 -archivePath archives/NVNavigationKit-iphonesimulator.xcarchive \
 BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
-SKIP_INSTALL=NO \
+SKIP_INSTALL=NO
 
 #  BUILD XCFRAMEWORK
 

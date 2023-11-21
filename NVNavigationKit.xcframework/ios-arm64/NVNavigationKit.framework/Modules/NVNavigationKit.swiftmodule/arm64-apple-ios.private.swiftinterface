@@ -82,6 +82,9 @@ public protocol NVNavigationServiceDelegate : AnyObject {
   public func stopNavigation()
   public func getCurrentLocation(completion: @escaping (CoreLocation.CLLocation?, NVNavigationKit.LocationError?) -> Swift.Void)
 }
+extension NVDirectionKit.NVibeRoute {
+  public static func getRoute(from coordinates: [CoreLocation.CLLocationCoordinate2D]) -> NVDirectionKit.NVibeRoute
+}
 @objc open class NVibeRouteProgress : ObjectiveC.NSObject {
   public var remainingDistance: Swift.Double
   public var remainingDuration: Swift.Double
@@ -98,7 +101,7 @@ public protocol NVNavigationServiceDelegate : AnyObject {
   public init(remainingDistance: Swift.Double, remainingDuration: Swift.Double, direction: CoreLocation.CLLocationDirection?, currentStep: NVDirectionKit.NVibeStep, nextStep: NVDirectionKit.NVibeStep?)
   @objc deinit
 }
-@objc public enum ImageType : Swift.Int {
+public enum ImageType : Swift.Int {
   case LEFT
   case RIGHT
   case STRAIGHT
@@ -112,6 +115,15 @@ public protocol NVNavigationServiceDelegate : AnyObject {
     get
   }
 }
+public enum RerouteMode {
+  case DEFAULT
+  case FOLLOW_SAME_ROUTE
+  public static func == (a: NVNavigationKit.RerouteMode, b: NVNavigationKit.RerouteMode) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
 extension NVNavigationKit.LocationError : Swift.Equatable {}
 extension NVNavigationKit.LocationError : Swift.Hashable {}
 extension NVNavigationKit.SideStreet : Swift.Equatable {}
@@ -120,3 +132,5 @@ extension NVNavigationKit.SideStreet : Swift.RawRepresentable {}
 extension NVNavigationKit.ImageType : Swift.Equatable {}
 extension NVNavigationKit.ImageType : Swift.Hashable {}
 extension NVNavigationKit.ImageType : Swift.RawRepresentable {}
+extension NVNavigationKit.RerouteMode : Swift.Equatable {}
+extension NVNavigationKit.RerouteMode : Swift.Hashable {}

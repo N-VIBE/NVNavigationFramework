@@ -298,16 +298,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 #if defined(__OBJC__)
-typedef SWIFT_ENUM(NSInteger, ImageType, open) {
-  ImageTypeLEFT = 0,
-  ImageTypeRIGHT = 1,
-  ImageTypeSTRAIGHT = 2,
-  ImageTypeCROSS = 3,
-  ImageTypeUTURN = 4,
-  ImageTypeFINISH = 5,
-  ImageTypeNONE = 6,
-};
-
 
 SWIFT_CLASS("_TtC15NVNavigationKit16NVCompassService")
 @interface NVCompassService : NSObject
