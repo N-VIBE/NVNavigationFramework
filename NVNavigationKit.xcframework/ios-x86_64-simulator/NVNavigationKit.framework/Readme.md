@@ -29,4 +29,4 @@ xcodebuild -create-xcframework \
 
 #  PUBLISH COCOAPOD
 
-pod trunk push NVNavigationKit.podspec
+pod trunk push NVNavigationKit.podspec --skip-import-validation
