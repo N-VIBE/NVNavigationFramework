@@ -4,6 +4,18 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Frameworks/Pods_NVNavigationKit.framework/Info.plist</key>
+		<data>
+		P5P78RtM7ICDfVxizZCiIO/MD1M=
+		</data>
+		<key>Frameworks/Pods_NVNavigationKit.framework/Pods_NVNavigationKit</key>
+		<data>
+		GSWKF/RFHadhVI4J1T/WkUqIbCQ=
+		</data>
+		<key>Frameworks/Pods_NVNavigationKit.framework/_CodeSignature/CodeResources</key>
+		<data>
+		zAOYXyl5SyUlZxranVtjw3K41To=
+		</data>
 		<key>Headers/NVNavigationKit-Swift.h</key>
 		<data>
 		+QgjOXh246tA3Q69uWgsMLMRlEk=
@@ -47,6 +59,27 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Frameworks/Pods_NVNavigationKit.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			XnolvbIMMoD4NVvMXbmPEpfc+EIPQlT0bRm+WpCrVuc=
+			</data>
+		</dict>
+		<key>Frameworks/Pods_NVNavigationKit.framework/Pods_NVNavigationKit</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			GPXr6/Hd4AfEOA1Um4YambjS7yaYIQQdJigbOtrMovQ=
+			</data>
+		</dict>
+		<key>Frameworks/Pods_NVNavigationKit.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			x9CsmBG2dwkYc/wsTsdyo8SLRNHnAK0AkPFaS05oUp4=
+			</data>
+		</dict>
 		<key>Headers/NVNavigationKit-Swift.h</key>
 		<dict>
 			<key>hash2</key>
