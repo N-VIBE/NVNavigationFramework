@@ -15,6 +15,19 @@ import SwiftyJSON
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+public protocol NVMultimodalServiceDelegate : AnyObject {
+  func multimodalService(_ service: NVNavigationKit.NVMultimodalService, didFailToPassTokenWith error: NVDirectionKit.TokenError)
+  func multimodalService(_ service: NVNavigationKit.NVMultimodalService, from route: NVDirectionKit.NVibeMultimodalRoute, shouldGoToNext multimodalStep: NVDirectionKit.NVibeMultimodalStep, with remainingMultimodalStep: Swift.Int) -> Swift.Bool
+  func multimodalService(_ service: NVNavigationKit.NVMultimodalService, from route: NVDirectionKit.NVibeMultimodalRoute, didChange multimodalStep: NVDirectionKit.NVibeMultimodalStep, with remainingMultimodalStep: Swift.Int)
+}
+@objc open class NVMultimodalService : ObjectiveC.NSObject {
+  weak public var delegate: (any NVNavigationKit.NVMultimodalServiceDelegate)?
+  public init(delegate: (any NVNavigationKit.NVMultimodalServiceDelegate)? = nil)
+  @objc deinit
+  public func startMultimodalNavigation(departure: NVDirectionKit.NVibeLocation, arrival: NVDirectionKit.NVibeLocation, route: NVDirectionKit.NVibeMultimodalRoute)
+  public func skipMultimodalStepNavigation()
+  public func stopMultimodalNavigation()
+}
 public enum LocationError {
   case noConnection, noLocation
   public static func == (a: NVNavigationKit.LocationError, b: NVNavigationKit.LocationError) -> Swift.Bool
@@ -39,6 +52,17 @@ public protocol NVCompassServiceDelegate : AnyObject {
   public func startCompass(direction: CoreLocation.CLLocationDirection? = nil, retrieveDirectionNavigation: Swift.Bool = false)
   public func stopCompass()
 }
+public protocol NVTransitServiceDelegate : AnyObject {
+  func transitService(_ service: NVNavigationKit.NVTransitService, didFailToPassTokenWith error: NVDirectionKit.TokenError)
+  func transitService(_ service: NVNavigationKit.NVTransitService, didUpdateTransitTo stop: NVDirectionKit.NVibeLocation, with remainingStop: Swift.Int)
+}
+@objc open class NVTransitService : ObjectiveC.NSObject {
+  weak public var delegate: (any NVNavigationKit.NVTransitServiceDelegate)?
+  public init(delegate: (any NVNavigationKit.NVTransitServiceDelegate)? = nil)
+  @objc deinit
+  public func startTransitNavigation(departure: NVDirectionKit.NVibeLocation, arrival: NVDirectionKit.NVibeLocation, transit: NVDirectionKit.NVibeTransitInformation)
+  public func stopTransitNavigation()
+}
 public enum SideStreet : Swift.String {
   case LEFT
   case RIGHT
@@ -61,9 +85,6 @@ public protocol NVNavigationServiceDelegate : AnyObject {
   func navigationService(_ service: NVNavigationKit.NVNavigationService, didForceChangeSideFor step: NVDirectionKit.NVibeStep, atRemaining stepDistance: CoreLocation.CLLocationDistance, with vibration: NVDirectionKit.NVibeVibration)
   func navigationService(_ service: NVNavigationKit.NVNavigationService, didPauseNavigationOnBadAccuracy: Swift.Bool)
   func navigationService(_ service: NVNavigationKit.NVNavigationService, didFailToPassTokenWith error: NVDirectionKit.TokenError)
-  func navigationService(_ service: NVNavigationKit.NVNavigationService, from route: NVDirectionKit.NVibeMultimodalRoute, shouldGoToNext multimodalStep: NVDirectionKit.NVibeMultimodalStep, with remainingMultimodalStep: Swift.Int) -> Swift.Bool
-  func navigationService(_ service: NVNavigationKit.NVNavigationService, from route: NVDirectionKit.NVibeMultimodalRoute, didChange multimodalStep: NVDirectionKit.NVibeMultimodalStep, with remainingMultimodalStep: Swift.Int)
-  func navigationService(_ service: NVNavigationKit.NVNavigationService, didUpdateTransitTo stop: NVDirectionKit.NVibeLocation, with remainingStop: Swift.Int)
 }
 @objc open class NVNavigationService : ObjectiveC.NSObject {
   weak public var delegate: (any NVNavigationKit.NVNavigationServiceDelegate)?
@@ -73,12 +94,7 @@ public protocol NVNavigationServiceDelegate : AnyObject {
   public var distanceBetweenRightDirection: Swift.Double
   public init(delegate: (any NVNavigationKit.NVNavigationServiceDelegate)? = nil)
   @objc deinit
-  public func startMultimodalNavigation(departure: NVDirectionKit.NVibeLocation, arrival: NVDirectionKit.NVibeLocation, route: NVDirectionKit.NVibeMultimodalRoute)
-  public func skipMultimodalStepNavigation()
-  public func stopMultimodalNavigation()
-  public func startTransitNavigation(departure: NVDirectionKit.NVibeLocation, arrival: NVDirectionKit.NVibeLocation, transit: NVDirectionKit.NVibeTransitInformation)
-  public func stopTransitNavigation()
-  public func startNavigation(departure: NVDirectionKit.NVibeLocation, arrival: NVDirectionKit.NVibeLocation, route: NVDirectionKit.NVibeRoute)
+  public func startNavigation(route: NVDirectionKit.NVibeRoute, rerouteMode: NVNavigationKit.RerouteMode = .DEFAULT)
   public func stopNavigation()
   public func getCurrentLocation(completion: @escaping (CoreLocation.CLLocation?, NVNavigationKit.LocationError?) -> Swift.Void)
 }

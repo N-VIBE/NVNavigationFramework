@@ -307,8 +307,24 @@ SWIFT_CLASS("_TtC15NVNavigationKit16NVCompassService")
 
 
 
+SWIFT_CLASS("_TtC15NVNavigationKit19NVMultimodalService")
+@interface NVMultimodalService : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+
 SWIFT_CLASS("_TtC15NVNavigationKit19NVNavigationService")
 @interface NVNavigationService : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+
+SWIFT_CLASS("_TtC15NVNavigationKit16NVTransitService")
+@interface NVTransitService : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
