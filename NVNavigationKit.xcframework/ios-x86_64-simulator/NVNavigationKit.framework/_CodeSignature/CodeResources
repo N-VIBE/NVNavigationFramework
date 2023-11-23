@@ -18,11 +18,11 @@
 		</data>
 		<key>Modules/NVNavigationKit.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		mPTGnM+fUYrCRa2KL/LPixXJLLo=
+		ZlKAzxtZXOGt8+zK9gqE9Yi3ph0=
 		</data>
 		<key>Modules/NVNavigationKit.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		3dBbNhESlAQjczBFT9j1jtnJuj0=
+		jvbDAaO/CKF9Z1xwJUphWqWutwc=
 		</data>
 		<key>Modules/NVNavigationKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -30,11 +30,11 @@
 		</data>
 		<key>Modules/NVNavigationKit.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		3dBbNhESlAQjczBFT9j1jtnJuj0=
+		jvbDAaO/CKF9Z1xwJUphWqWutwc=
 		</data>
 		<key>Modules/NVNavigationKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		GSnYLas/3kZFHT6HCHzW2ChiI10=
+		/xRTc05VxyBISa9fKOJFpC+o7g4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -65,14 +65,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vHd4UgoCV1zS+oYtFCP3Xuy8eEf5APybH5fhFe9iH4o=
+			j3ybcCuswBo3YifVEsKhn2nN1ly4MYeDofbdcwHkbvI=
 			</data>
 		</dict>
 		<key>Modules/NVNavigationKit.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			CbvaAo78w3mDVNtq/N7DqHa6uWySjsTt+UBShoEVtHg=
+			NnR300YVIAc4IrhialJPaQ+JsGo89dsC2PIhtuEtaWQ=
 			</data>
 		</dict>
 		<key>Modules/NVNavigationKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -86,14 +86,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			CbvaAo78w3mDVNtq/N7DqHa6uWySjsTt+UBShoEVtHg=
+			NnR300YVIAc4IrhialJPaQ+JsGo89dsC2PIhtuEtaWQ=
 			</data>
 		</dict>
 		<key>Modules/NVNavigationKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			66INkYU49Z/ZrP1ACGTorcgXRRiowc9a5cO77iiBNpg=
+			KXjBgvJKvY9LBIv4WwuWgafoRShVTuEAX+XWW93KsDc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
