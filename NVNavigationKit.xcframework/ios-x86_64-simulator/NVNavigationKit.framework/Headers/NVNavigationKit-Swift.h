@@ -299,6 +299,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 #if defined(__OBJC__)
 
+/// NVCompassService is a service to use compass phone
 SWIFT_CLASS("_TtC15NVNavigationKit16NVCompassService")
 @interface NVCompassService : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -315,6 +316,7 @@ SWIFT_CLASS("_TtC15NVNavigationKit19NVMultimodalService")
 
 
 
+/// NVNavigationService is a service to handle walking TurnByTurn
 SWIFT_CLASS("_TtC15NVNavigationKit19NVNavigationService")
 @interface NVNavigationService : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;

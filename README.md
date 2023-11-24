@@ -10,15 +10,17 @@ To use NVNavigationKit, some requirements are needed.
 
      - ## Dependency
 
-       NVNavigationKit is only available via Cocoapods.
+       NVNavigationKit is only available via Cocoapods for now. You need to enable `BUILD_LIBRARY_FOR_DISTRIBUTION` to work.
 
        ```ruby
        platform :ios, '13.0'
 
        target 'TargetNameForYourApp' do
          use_frameworks!
+         
          pod 'NVNavigationKit', '~> 0.11.9'
        end
+       
        post_install do |installer|
          installer.pods_project.targets.each do |target|
            target.build_configurations.each do |config|

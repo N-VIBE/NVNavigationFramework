@@ -97,9 +97,6 @@ public protocol NVNavigationServiceDelegate : AnyObject {
   public func stopNavigation()
   public func getCurrentLocation(completion: @escaping (CoreLocation.CLLocation?, NVNavigationKit.LocationError?) -> Swift.Void)
 }
-extension NVDirectionKit.NVibeRoute {
-  public static func getRoute(from coordinates: [CoreLocation.CLLocationCoordinate2D]) -> NVDirectionKit.NVibeRoute
-}
 @objc open class NVibeRouteProgress : ObjectiveC.NSObject {
   public var remainingDistance: Swift.Double
   public var remainingDuration: Swift.Double
