@@ -62,15 +62,6 @@ public protocol NVTransitServiceDelegate : AnyObject {
   public func startTransitNavigation(departure: NVDirectionKit.NVibeLocation, arrival: NVDirectionKit.NVibeLocation, transit: NVDirectionKit.NVibeTransitInformation)
   public func stopTransitNavigation()
 }
-public enum SideStreet : Swift.String {
-  case LEFT
-  case RIGHT
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
-    get
-  }
-}
 public protocol NVNavigationServiceDelegate : AnyObject {
   func navigationService(_ service: NVNavigationKit.NVNavigationService, didStartWith step: NVDirectionKit.NVibeStep, atRemaining routeDistance: CoreLocation.CLLocationDistance, atRemaining stepDistance: CoreLocation.CLLocationDistance, withRemaining routeDuration: Swift.Double, with image: NVNavigationKit.ImageType)
   func navigationService(_ service: NVNavigationKit.NVNavigationService, didUpdate progress: NVNavigationKit.NVibeRouteProgress, with rawLocation: CoreLocation.CLLocation, snappedTo location: CoreLocation.CLLocation)
@@ -138,9 +129,6 @@ public enum RerouteMode {
 }
 extension NVNavigationKit.LocationError : Swift.Equatable {}
 extension NVNavigationKit.LocationError : Swift.Hashable {}
-extension NVNavigationKit.SideStreet : Swift.Equatable {}
-extension NVNavigationKit.SideStreet : Swift.Hashable {}
-extension NVNavigationKit.SideStreet : Swift.RawRepresentable {}
 extension NVNavigationKit.ImageType : Swift.Equatable {}
 extension NVNavigationKit.ImageType : Swift.Hashable {}
 extension NVNavigationKit.ImageType : Swift.RawRepresentable {}
