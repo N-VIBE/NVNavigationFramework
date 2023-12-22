@@ -63,16 +63,14 @@ public protocol NVTransitServiceDelegate : AnyObject {
   public func stopTransitNavigation()
 }
 public protocol NVNavigationServiceDelegate : AnyObject {
-  func navigationService(_ service: NVNavigationKit.NVNavigationService, didStartWith step: NVDirectionKit.NVibeStep, atRemaining routeDistance: CoreLocation.CLLocationDistance, atRemaining stepDistance: CoreLocation.CLLocationDistance, withRemaining routeDuration: Swift.Double, with image: NVNavigationKit.ImageType)
-  func navigationService(_ service: NVNavigationKit.NVNavigationService, didUpdate progress: NVNavigationKit.NVibeRouteProgress, with rawLocation: CoreLocation.CLLocation, snappedTo location: CoreLocation.CLLocation)
-  func navigationService(_ service: NVNavigationKit.NVNavigationService, didStopWith instruction: Swift.String, with image: NVNavigationKit.ImageType)
+  func navigationService(_ service: NVNavigationKit.NVNavigationService, didStartWith progress: NVNavigationKit.NVibeRouteProgress)
+  func navigationService(_ service: NVNavigationKit.NVNavigationService, didUpdate progress: NVNavigationKit.NVibeRouteProgress, with rawLocation: CoreLocation.CLLocation, snappedTo location: CoreLocation.CLLocation, with uTurn: Swift.Bool)
+  func navigationService(_ service: NVNavigationKit.NVNavigationService, didStopWith progress: NVNavigationKit.NVibeRouteProgress)
   func navigationService(_ service: NVNavigationKit.NVNavigationService, shouldRerouteFrom location: CoreLocation.CLLocation) -> Swift.Bool
-  func navigationService(_ service: NVNavigationKit.NVNavigationService, didRerouteAlong route: NVDirectionKit.NVibeRoute, to direction: CoreLocation.CLLocationDirection, with step: NVDirectionKit.NVibeStep, atRemaining routeDistance: CoreLocation.CLLocationDistance, atRemaining stepDistance: CoreLocation.CLLocationDistance, withRemaining routeDuration: Swift.Double, with image: NVNavigationKit.ImageType)
-  func navigationService(_ service: NVNavigationKit.NVNavigationService, didUpdateUIWith step: NVDirectionKit.NVibeStep, atRemaining routeDistance: CoreLocation.CLLocationDistance, atRemaining stepDistance: CoreLocation.CLLocationDistance, with image: NVNavigationKit.ImageType)
-  func navigationService(_ service: NVNavigationKit.NVNavigationService, didUpdateRightDirectionWith vibration: NVDirectionKit.NVibeVibration)
-  func navigationService(_ service: NVNavigationKit.NVNavigationService, willChange step: NVDirectionKit.NVibeStep, with vibration: NVDirectionKit.NVibeVibration, atRemaining stepDistance: CoreLocation.CLLocationDistance)
-  func navigationService(_ service: NVNavigationKit.NVNavigationService, didChange step: NVDirectionKit.NVibeStep, with vibration: [NVDirectionKit.NVibeVibration])
-  func navigationService(_ service: NVNavigationKit.NVNavigationService, didForceChangeSideFor step: NVDirectionKit.NVibeStep, atRemaining stepDistance: CoreLocation.CLLocationDistance, with vibration: NVDirectionKit.NVibeVibration)
+  func navigationService(_ service: NVNavigationKit.NVNavigationService, didRerouteAlong route: NVDirectionKit.NVibeRoute, with uTurn: Swift.Bool)
+  func navigationService(_ service: NVNavigationKit.NVNavigationService, didUpdateRightDirectionWith progress: NVNavigationKit.NVibeRouteProgress)
+  func navigationService(_ service: NVNavigationKit.NVNavigationService, willChange progress: NVNavigationKit.NVibeRouteProgress)
+  func navigationService(_ service: NVNavigationKit.NVNavigationService, didChange progress: NVNavigationKit.NVibeRouteProgress)
   func navigationService(_ service: NVNavigationKit.NVNavigationService, didPauseNavigationOnBadAccuracy: Swift.Bool)
   func navigationService(_ service: NVNavigationKit.NVNavigationService, didFailToPassTokenWith error: NVDirectionKit.TokenError)
 }
