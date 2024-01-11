@@ -71,6 +71,7 @@ public protocol NVNavigationServiceDelegate : AnyObject {
   func navigationService(_ service: NVNavigationKit.NVNavigationService, didUpdateRightDirectionWith progress: NVNavigationKit.NVibeRouteProgress)
   func navigationService(_ service: NVNavigationKit.NVNavigationService, willChange progress: NVNavigationKit.NVibeRouteProgress)
   func navigationService(_ service: NVNavigationKit.NVNavigationService, didChange progress: NVNavigationKit.NVibeRouteProgress)
+  func navigationService(_ service: NVNavigationKit.NVNavigationService, didEncounter obstacle: NVDirectionKit.NVibeObstacle)
   func navigationService(_ service: NVNavigationKit.NVNavigationService, didPauseNavigationOnBadAccuracy: Swift.Bool)
   func navigationService(_ service: NVNavigationKit.NVNavigationService, didFailToPassTokenWith error: NVDirectionKit.TokenError)
 }
@@ -90,7 +91,8 @@ public protocol NVNavigationServiceDelegate : AnyObject {
   public var remainingDistance: Swift.Double
   public var remainingDuration: Swift.Double
   public var stepProgress: NVNavigationKit.NVibeStepProgress
-  public init(remainingDistance: Swift.Double, remainingDuration: Swift.Double, stepProgress: NVNavigationKit.NVibeStepProgress)
+  public var obstacleProgress: NVNavigationKit.NVibeObstacleProgress?
+  public init(remainingDistance: Swift.Double, remainingDuration: Swift.Double, stepProgress: NVNavigationKit.NVibeStepProgress, obstacleProgress: NVNavigationKit.NVibeObstacleProgress? = nil)
   @objc deinit
 }
 @objc open class NVibeStepProgress : ObjectiveC.NSObject {
@@ -100,6 +102,13 @@ public protocol NVNavigationServiceDelegate : AnyObject {
   public var currentStep: NVDirectionKit.NVibeStep
   public var nextStep: NVDirectionKit.NVibeStep?
   public init(remainingDistance: Swift.Double, remainingDuration: Swift.Double, direction: CoreLocation.CLLocationDirection?, currentStep: NVDirectionKit.NVibeStep, nextStep: NVDirectionKit.NVibeStep?)
+  @objc deinit
+}
+@objc open class NVibeObstacleProgress : ObjectiveC.NSObject {
+  public var remainingDistance: Swift.Double
+  public var remainingDuration: Swift.Double
+  public var currentObstacle: NVDirectionKit.NVibeObstacle
+  public init(remainingDistance: Swift.Double, remainingDuration: Swift.Double, currentObstacle: NVDirectionKit.NVibeObstacle)
   @objc deinit
 }
 public enum ImageType : Swift.Int {

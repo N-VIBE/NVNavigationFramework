@@ -333,6 +333,13 @@ SWIFT_CLASS("_TtC15NVNavigationKit16NVTransitService")
 
 
 
+SWIFT_CLASS("_TtC15NVNavigationKit21NVibeObstacleProgress")
+@interface NVibeObstacleProgress : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 
 SWIFT_CLASS("_TtC15NVNavigationKit18NVibeRouteProgress")
 @interface NVibeRouteProgress : NSObject
