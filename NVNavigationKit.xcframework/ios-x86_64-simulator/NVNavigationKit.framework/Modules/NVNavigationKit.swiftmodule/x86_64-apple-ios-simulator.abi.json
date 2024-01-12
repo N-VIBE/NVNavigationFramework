@@ -5243,245 +5243,273 @@
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "StringLiteral",
-      "offset": 3319,
+      "offset": 2351,
+      "length": 50,
+      "value": "\"changeLocationState : \""
+    },
+    {
+      "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
+      "kind": "StringLiteral",
+      "offset": 2382,
+      "length": 1,
+      "value": "\" : \""
+    },
+    {
+      "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
+      "kind": "StringLiteral",
+      "offset": 2400,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
+      "kind": "StringLiteral",
+      "offset": 3385,
       "length": 44,
       "value": "\"locationList.count : \""
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "StringLiteral",
-      "offset": 3362,
+      "offset": 3428,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 3397,
+      "offset": 3463,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 3460,
+      "offset": 3526,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "StringLiteral",
-      "offset": 3482,
+      "offset": 3548,
       "length": 116,
       "value": "\"locationList.last!.distance(from: locationList.first!) : \""
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "StringLiteral",
-      "offset": 3597,
+      "offset": 3663,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 3912,
+      "offset": 3978,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 3951,
+      "offset": 4017,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 3981,
+      "offset": 4047,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 4427,
+      "offset": 4493,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 4511,
+      "offset": 4577,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 4660,
+      "offset": 4726,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "StringLiteral",
-      "offset": 4700,
+      "offset": 4766,
       "length": 34,
       "value": "\"WARNING : Please enable location\""
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 4755,
+      "offset": 4821,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 4935,
+      "offset": 5001,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "StringLiteral",
-      "offset": 5140,
+      "offset": 5206,
       "length": 49,
       "value": "\"WARNING : Please authorize location when in use\""
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 5224,
+      "offset": 5290,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 5465,
+      "offset": 5531,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "StringLiteral",
-      "offset": 5513,
+      "offset": 5579,
       "length": 48,
       "value": "\"WARNING : Please enable location full accuracy\""
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 5586,
+      "offset": 5652,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 5631,
+      "offset": 5697,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
+      "kind": "StringLiteral",
+      "offset": 5881,
+      "length": 20,
+      "value": "\"didUpdateLocations\""
+    },
+    {
+      "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 6181,
+      "offset": 6283,
       "length": 1,
       "value": "6"
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 6466,
+      "offset": 6568,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 6582,
+      "offset": 6684,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 6826,
+      "offset": 6973,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 6868,
+      "offset": 7015,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 6923,
+      "offset": 7070,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "StringLiteral",
-      "offset": 7226,
+      "offset": 7373,
       "length": 48,
       "value": "\"LocationManager :: authorization notDetermined\""
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 7315,
+      "offset": 7462,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "StringLiteral",
-      "offset": 7422,
+      "offset": 7569,
       "length": 41,
       "value": "\"LocationManager :: authorization denied\""
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 7504,
+      "offset": 7651,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "StringLiteral",
-      "offset": 7615,
+      "offset": 7762,
       "length": 45,
       "value": "\"LocationManager :: authorization restricted\""
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 7701,
+      "offset": 7848,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "StringLiteral",
-      "offset": 7821,
+      "offset": 7968,
       "length": 46,
       "value": "\"LocationManager :: authorization when in use\""
     },
     {
       "filePath": "\/Users\/macpron-vibe\/Desktop\/Application\/NVNavigationKit\/Sources\/NVNavigationKit\/Manager\/LocationManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 7908,
+      "offset": 8055,
       "length": 4,
       "value": "true"
     },
