@@ -18,7 +18,7 @@
 		</data>
 		<key>Modules/NVNavigationKit.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		UXVbTfQRZ/L/MZhuzIUHqjsLaKk=
+		uyVBrQCrjm/YKnxJIspAVms20n0=
 		</data>
 		<key>Modules/NVNavigationKit.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Modules/NVNavigationKit.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		88xJW2zgGd9079q6xvMcVtirHnI=
+		XlxJmRjGgvyBLXHwfsu7jlbcVgk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -65,7 +65,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			sY5lKbrHqO5TvU5PRreAeWAbyogRxSQ2I4WWztlISG0=
+			wJke4QddFztEZTUo91I0txLDQ81Ob2nk3RJHsE1qrgQ=
 			</data>
 		</dict>
 		<key>Modules/NVNavigationKit.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
@@ -93,7 +93,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			M+2EHqkAM/KGoAXns9I2O5VIHCj1O9qKXWEykmhrjg0=
+			RRG5bhHCuUupW7ATBuQ3pQyxkzuBiUb/6OCQckyMJVc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
