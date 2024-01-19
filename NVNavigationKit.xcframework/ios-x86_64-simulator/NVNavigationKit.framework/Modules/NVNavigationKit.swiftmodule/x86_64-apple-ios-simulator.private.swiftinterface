@@ -62,6 +62,13 @@ public protocol NVTransitServiceDelegate : AnyObject {
   public func startTransitNavigation(departure: NVDirectionKit.NVibeLocation, arrival: NVDirectionKit.NVibeLocation, transit: NVDirectionKit.NVibeTransitInformation)
   public func stopTransitNavigation()
 }
+public class NVibeManeuverDetailsWithDirection {
+  public var details: [NVDirectionKit.NVibeManeuverDetail]
+  public var direction: Swift.Int?
+  public init(details: [NVDirectionKit.NVibeManeuverDetail], direction: Swift.Int? = nil)
+  public func showData()
+  @objc deinit
+}
 public protocol NVNavigationServiceDelegate : AnyObject {
   func navigationService(_ service: NVNavigationKit.NVNavigationService, didStartWith progress: NVNavigationKit.NVibeRouteProgress)
   func navigationService(_ service: NVNavigationKit.NVNavigationService, didUpdate progress: NVNavigationKit.NVibeRouteProgress, with rawLocation: CoreLocation.CLLocation, snappedTo location: CoreLocation.CLLocation, with uTurn: Swift.Bool)
@@ -133,6 +140,9 @@ public enum RerouteMode {
   public var hashValue: Swift.Int {
     get
   }
+}
+extension NVDirectionKit.NVibeManeuver {
+  public func getSeparateManeuver() -> [NVNavigationKit.NVibeManeuverDetailsWithDirection]
 }
 extension NVNavigationKit.LocationError : Swift.Equatable {}
 extension NVNavigationKit.LocationError : Swift.Hashable {}
