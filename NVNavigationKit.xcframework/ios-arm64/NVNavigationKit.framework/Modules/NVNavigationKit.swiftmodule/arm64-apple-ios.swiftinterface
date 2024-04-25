@@ -46,6 +46,7 @@ public protocol NVCompassServiceDelegate : AnyObject {
 @objc open class NVCompassService : ObjectiveC.NSObject {
   weak public var delegate: (any NVNavigationKit.NVCompassServiceDelegate)?
   public var isCompassRunning: Swift.Bool
+  public var compassDirection: CoreLocation.CLLocationDirection?
   public init(delegate: (any NVNavigationKit.NVCompassServiceDelegate)? = nil)
   @objc deinit
   public func startCompass(direction: CoreLocation.CLLocationDirection? = nil, retrieveDirectionNavigation: Swift.Bool = false)
