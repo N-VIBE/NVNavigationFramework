@@ -46,6 +46,7 @@ public protocol NVCompassServiceDelegate : AnyObject {
 @objc open class NVCompassService : ObjectiveC.NSObject {
   weak public var delegate: (any NVNavigationKit.NVCompassServiceDelegate)?
   public var isCompassRunning: Swift.Bool
+  public var compassDirection: CoreLocation.CLLocationDirection?
   public init(delegate: (any NVNavigationKit.NVCompassServiceDelegate)? = nil)
   @objc deinit
   public func startCompass(direction: CoreLocation.CLLocationDirection? = nil, retrieveDirectionNavigation: Swift.Bool = false)
@@ -61,13 +62,6 @@ public protocol NVTransitServiceDelegate : AnyObject {
   @objc deinit
   public func startTransitNavigation(departure: NVDirectionKit.NVibeLocation, arrival: NVDirectionKit.NVibeLocation, transit: NVDirectionKit.NVibeTransitInformation)
   public func stopTransitNavigation()
-}
-public class NVibeManeuverDetailsWithDirection {
-  public var details: [NVDirectionKit.NVibeManeuverDetail]
-  public var direction: Swift.Int?
-  public init(details: [NVDirectionKit.NVibeManeuverDetail], direction: Swift.Int? = nil)
-  public func showData()
-  @objc deinit
 }
 public protocol NVNavigationServiceDelegate : AnyObject {
   func navigationService(_ service: NVNavigationKit.NVNavigationService, didStartWith progress: NVNavigationKit.NVibeRouteProgress)
@@ -140,9 +134,6 @@ public enum RerouteMode {
   public var hashValue: Swift.Int {
     get
   }
-}
-extension NVDirectionKit.NVibeManeuver {
-  public func getSeparateManeuver() -> [NVNavigationKit.NVibeManeuverDetailsWithDirection]
 }
 extension NVNavigationKit.LocationError : Swift.Equatable {}
 extension NVNavigationKit.LocationError : Swift.Hashable {}

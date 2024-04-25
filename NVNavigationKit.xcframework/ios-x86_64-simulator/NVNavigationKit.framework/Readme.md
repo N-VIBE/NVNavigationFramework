@@ -11,14 +11,14 @@ SKIP_INSTALL=NO
 
 #  BUILD SIMULATOR
 
-    xcodebuild archive \
-    -workspace NVNavigationKit.xcworkspace \
-    -scheme NVNavigationKit \
-    -configuration Release \
-    -sdk iphonesimulator \
-    -archivePath archives/NVNavigationKit-iphonesimulator.xcarchive \
-    BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
-    SKIP_INSTALL=NO
+xcodebuild archive \
+-workspace NVNavigationKit.xcworkspace \
+-scheme NVNavigationKit \
+-configuration Release \
+-sdk iphonesimulator \
+-archivePath archives/NVNavigationKit-iphonesimulator.xcarchive \
+BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
+SKIP_INSTALL=NO
 
 #  BUILD XCFRAMEWORK
 

@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/NVNavigationKit-Swift.h</key>
 		<data>
-		tJG60adolk8aFQoqT5tO4RTwBDM=
+		i+vBgX8bitjRH3FtUrpqlmeq7AY=
 		</data>
 		<key>Headers/NVNavigationKit.h</key>
 		<data>
@@ -18,11 +18,11 @@
 		</data>
 		<key>Modules/NVNavigationKit.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		aS7Q7Gb93I9fUnTC894mlSKVg2k=
+		PyRD1UrSr/adJYyoXHICal1uggg=
 		</data>
 		<key>Modules/NVNavigationKit.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		iv51aDtGOmRR/nNMDA8dvgV2VN8=
+		6OgLHFY0quL17o370IVdz7b89x8=
 		</data>
 		<key>Modules/NVNavigationKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -30,11 +30,11 @@
 		</data>
 		<key>Modules/NVNavigationKit.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		iv51aDtGOmRR/nNMDA8dvgV2VN8=
+		6OgLHFY0quL17o370IVdz7b89x8=
 		</data>
 		<key>Modules/NVNavigationKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		hFD6gkkI+80ebaSuqg1Zr1YWfUY=
+		EjUMcDjgcz7Zt8ESJfDwbB05bqU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Readme.md</key>
 		<data>
-		qKRevjYLd2WruJEOwesulU1cXEg=
+		4nZ+CzDRsCQgfw7APRL23vHfy9k=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -51,7 +51,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OS6q7fj/wxRxKYnqEgZjfTmBLrXZx5nj2l1GIe5OrrI=
+			pirJ0ufLxaeNE1mnWYnqeOPWplWvB/AdhjxU3u2JA6M=
 			</data>
 		</dict>
 		<key>Headers/NVNavigationKit.h</key>
@@ -65,14 +65,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ces1fZrJEqJsFoTw3Z/6Iq0MY0WQrwBvWv6dH51gzuY=
+			tp42hw5849sx5i3Xf6ynEWw8FHzlRT9vh9Zs27lCYIQ=
 			</data>
 		</dict>
 		<key>Modules/NVNavigationKit.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2akYl0qyZUPqLDa9yMGka6LmJ8X1KZGCrDO2gjhwzZA=
+			+yIBOmZkyo8N0/coTIL+2QxB+A/c/S9QEPiNGy6/37E=
 			</data>
 		</dict>
 		<key>Modules/NVNavigationKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -86,14 +86,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2akYl0qyZUPqLDa9yMGka6LmJ8X1KZGCrDO2gjhwzZA=
+			+yIBOmZkyo8N0/coTIL+2QxB+A/c/S9QEPiNGy6/37E=
 			</data>
 		</dict>
 		<key>Modules/NVNavigationKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Jl+shsjAwS9JWLpScAzmN7jMImlPYY8GPFvxBqULuO0=
+			mHP42GBsGIkWvBw5RPBecAIAPELRKut0H2eKz/QnIGc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -107,7 +107,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			qKCUqJg6yMonaQ2hWTiBhQr0fjwyDi317SyXZ6KmK7k=
+			YNWCoSb8iUWdNKUiIiC7COf/oA8DiBjiU+Ve/onEfzA=
 			</data>
 		</dict>
 	</dict>
