@@ -18,7 +18,7 @@ To use NVNavigationKit, some requirements are needed.
        target 'TargetNameForYourApp' do
          use_frameworks!
          
-         pod 'NVNavigationKit', '~> 0.15.0'
+         pod 'NVNavigationKit', '~> 0.16.0'
        end
        
        post_install do |installer|
