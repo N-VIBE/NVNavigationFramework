@@ -52,9 +52,17 @@ public protocol NVCompassServiceDelegate : AnyObject {
   public func startCompass(direction: CoreLocation.CLLocationDirection? = nil, retrieveDirectionNavigation: Swift.Bool = false)
   public func stopCompass()
 }
+extension NVDirectionKit.NVibeRoute {
+  public func getTransitionInstructionFromIndoorToOutdoor(multimodalRoute: NVDirectionKit.NVibeMultimodalRoute, index: Swift.Int) -> (instruction: Swift.String, vibrations: [NVDirectionKit.NVibeVibration], sideStreet: NVDirectionKit.SideStreet)?
+  public func updateFinalStepForIndoorTransition(multimodalRoute: NVDirectionKit.NVibeMultimodalRoute, index: Swift.Int)
+}
 public protocol NVTransitServiceDelegate : AnyObject {
   func transitService(_ service: NVNavigationKit.NVTransitService, didFailToPassTokenWith error: NVDirectionKit.TokenError)
-  func transitService(_ service: NVNavigationKit.NVTransitService, didUpdateTransitTo stop: NVDirectionKit.NVibeLocation, with remainingStop: Swift.Int)
+  func transitService(_ service: NVNavigationKit.NVTransitService, didStartWith progress: NVNavigationKit.NVibeTransitProgress)
+  func transitService(_ service: NVNavigationKit.NVTransitService, didUpdate progress: NVNavigationKit.NVibeTransitProgress, with rawLocation: CoreLocation.CLLocation, snappedTo location: CoreLocation.CLLocation)
+  func transitService(_ service: NVNavigationKit.NVTransitService, didStopWith progress: NVNavigationKit.NVibeTransitProgress)
+  func transitService(_ service: NVNavigationKit.NVTransitService, willChange progress: NVNavigationKit.NVibeTransitProgress)
+  func transitService(_ service: NVNavigationKit.NVTransitService, didChange progress: NVNavigationKit.NVibeTransitProgress)
 }
 @objc open class NVTransitService : ObjectiveC.NSObject {
   weak public var delegate: (any NVNavigationKit.NVTransitServiceDelegate)?
@@ -87,6 +95,10 @@ public protocol NVNavigationServiceDelegate : AnyObject {
   public func startNavigation(route: NVDirectionKit.NVibeRoute, rerouteMode: NVNavigationKit.RerouteMode = .DEFAULT)
   public func stopNavigation()
   public func getCurrentLocation(completion: @escaping (CoreLocation.CLLocation?, NVNavigationKit.LocationError?) -> Swift.Void)
+}
+extension NVDirectionKit.NVibeTransitInformation {
+  public func getGeometry() -> [CoreLocation.CLLocationCoordinate2D]
+  public func toGPX(speed: Swift.Double = 11000.0) -> Swift.String
 }
 @objc open class NVibeRouteProgress : ObjectiveC.NSObject {
   public var remainingDistance: Swift.Double
@@ -134,6 +146,13 @@ public enum RerouteMode {
   public var hashValue: Swift.Int {
     get
   }
+}
+@objc open class NVibeTransitProgress : ObjectiveC.NSObject {
+  public var currentStop: NVDirectionKit.NVibeLocation
+  public var nextStop: NVDirectionKit.NVibeLocation?
+  public var remainingStop: Swift.Int
+  public init(currentStop: NVDirectionKit.NVibeLocation, nextStop: NVDirectionKit.NVibeLocation? = nil, remainingStop: Swift.Int)
+  @objc deinit
 }
 extension NVNavigationKit.LocationError : Swift.Equatable {}
 extension NVNavigationKit.LocationError : Swift.Hashable {}

@@ -27,9 +27,25 @@ class MyClass: UIViewController, NVTransitServiceDelegate {
     override func transitService(_ service: NVTransitService, didFailToPassTokenWith error: TokenError) {
         //You will receive error related to SDK Token here
     }
-
-    override func transitService(_ service: NVTransitService, didUpdateTransitTo stop: NVibeLocation, with remainingStop: Int) {
-        //Call when the next transit stop is near
+    
+    func transitService(_ service: NVTransitService, didStartWith progress: NVibeTransitProgress) {
+        //Call when transit navigation has started
+    }
+    
+    func transitService(_ service: NVTransitService, didUpdate progress: NVibeTransitProgress, with rawLocation: CLLocation, snappedTo location: CLLocation) {
+        //Call on each location update
+    }
+    
+    func transitService(_ service: NVTransitService, didStopWith progress: NVibeTransitProgress) {
+        //Call when when you detect the last stop
+    }
+    
+    func transitService(_ service: NVTransitService, willChange progress: NVibeTransitProgress) {
+        //Call when when you are near the next stop
+    }
+    
+    func transitService(_ service: NVTransitService, didChange progress: NVibeTransitProgress) {
+        //Call when when you detect the next stop
     }
 }
 ```

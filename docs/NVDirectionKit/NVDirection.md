@@ -113,16 +113,28 @@ class MyClass: UIViewController {
 
 ## Get custom route
 
-First, you need a list of `CLLocationCoordinate2D`. Then, you can pass this list to the specific NVibeRoute's constructor to generate route based on this list. The list need at least two coordinates.
+You can request a custom route the same way as normal route. You just need to add a list of `CLLocationCoordinate2D`. The list need at least two coordinates.
 
 ```swift
 import NVDirectionKit
 import CoreLocation
 
 class MyClass: UIViewController {
+
     override func viewDidLoad() {
-        let path: [CLLocationCoordinate2D] = []
-        let customRoute = NVibeRoute(from: path)
+        let origin = CLLocationCoordinate2D(latitude: 48.85934519646515, longitude: 2.3790224217764826)
+        let destination = CLLocationCoordinate2D(latitude: 48.85869580049223, longitude: 2.373062553499055)
+        let path: [CLLocationCoordinate2D] = [origin, CLLocationCoordinate2D(latitude: 48.86029101560107, longitude: 2.378561057106947), destination]
+        
+        NVDirection.shared.getCustomNavigationRoute(from: NVibeLocation(address: "7 Avenue Parmentier", position: origin), to: NVibeLocation(address: "Pépinière 27", position: destination), with: path, language: "en") { (result, error) in
+            guard result != nil, error == nil else {
+                //You will receive an error if the route calculation fails. More detail about the error in the error object.
+                return
+            }
+            //You receive the calculated route here and additional data.
+            result.route //NVibeRoute
+            result.startingDirection //CLLocationDirection
+        }
     }
 }
 ```

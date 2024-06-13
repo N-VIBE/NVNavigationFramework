@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/NVNavigationKit-Swift.h</key>
 		<data>
-		i+vBgX8bitjRH3FtUrpqlmeq7AY=
+		KsTEi0Vdw1yz5yDAyVnmzDxzd0M=
 		</data>
 		<key>Headers/NVNavigationKit.h</key>
 		<data>
@@ -18,11 +18,11 @@
 		</data>
 		<key>Modules/NVNavigationKit.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		Ii/4hpAU7YoWn645Zj+7onM9AMo=
+		bYyC6ZmAoIRszCY+6LSPD9QAjLg=
 		</data>
 		<key>Modules/NVNavigationKit.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		6OgLHFY0quL17o370IVdz7b89x8=
+		BkCnYIqU1yeKZ2CnTSIWgR0Itc0=
 		</data>
 		<key>Modules/NVNavigationKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -30,11 +30,11 @@
 		</data>
 		<key>Modules/NVNavigationKit.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		6OgLHFY0quL17o370IVdz7b89x8=
+		BkCnYIqU1yeKZ2CnTSIWgR0Itc0=
 		</data>
 		<key>Modules/NVNavigationKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		pyWvvzDM59pJqTsZQKOrXLEhyDI=
+		w0Vb0TpJPiuoHERDnSZqbvGVQxM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -51,7 +51,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			pirJ0ufLxaeNE1mnWYnqeOPWplWvB/AdhjxU3u2JA6M=
+			FRhuCclMN7F4ZX5bfRoxQ8kagFAwk7EVRRjELdc+yO8=
 			</data>
 		</dict>
 		<key>Headers/NVNavigationKit.h</key>
@@ -65,14 +65,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8Cd68jpBYdJqB1wmLmHx92co7eeKsSYPi0V037mBRqg=
+			a6T3wRDttQNBmgHG/k2JdLc2VjlvtGogmndmFpaD2BA=
 			</data>
 		</dict>
 		<key>Modules/NVNavigationKit.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+yIBOmZkyo8N0/coTIL+2QxB+A/c/S9QEPiNGy6/37E=
+			ZW6BhjVgVaNALnizOK8o/vtIYy08uvVjni29MYSOgnA=
 			</data>
 		</dict>
 		<key>Modules/NVNavigationKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -86,14 +86,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+yIBOmZkyo8N0/coTIL+2QxB+A/c/S9QEPiNGy6/37E=
+			ZW6BhjVgVaNALnizOK8o/vtIYy08uvVjni29MYSOgnA=
 			</data>
 		</dict>
 		<key>Modules/NVNavigationKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iO9hsxylZqPq0Gq9pcdJVQuKo9lNekc/wz7w1BcF4Ek=
+			aBfi05c7FAhxzCGe7uEUyj2N+Vdh+IcHnpOnMz8+kTE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
