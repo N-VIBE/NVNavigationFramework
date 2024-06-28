@@ -111,34 +111,6 @@ class MyClass: UIViewController {
 }
 ```
 
-## Get custom route
-
-You can request a custom route the same way as normal route. You just need to add a list of `CLLocationCoordinate2D`. The list need at least two coordinates.
-
-```swift
-import NVDirectionKit
-import CoreLocation
-
-class MyClass: UIViewController {
-
-    override func viewDidLoad() {
-        let origin = CLLocationCoordinate2D(latitude: 48.85934519646515, longitude: 2.3790224217764826)
-        let destination = CLLocationCoordinate2D(latitude: 48.85869580049223, longitude: 2.373062553499055)
-        let path: [CLLocationCoordinate2D] = [origin, CLLocationCoordinate2D(latitude: 48.86029101560107, longitude: 2.378561057106947), destination]
-        
-        NVDirection.shared.getCustomNavigationRoute(from: NVibeLocation(address: "7 Avenue Parmentier", position: origin), to: NVibeLocation(address: "Pépinière 27", position: destination), with: path, language: "en") { (result, error) in
-            guard result != nil, error == nil else {
-                //You will receive an error if the route calculation fails. More detail about the error in the error object.
-                return
-            }
-            //You receive the calculated route here and additional data.
-            result.route //NVibeRoute
-            result.startingDirection //CLLocationDirection
-        }
-    }
-}
-```
-
 ## Get multimodal route
 
 To calculate route, you need to use the method `getMultimodalRoute()` with a start and end location and set if you want full walking route with it (it's set to true by default).
