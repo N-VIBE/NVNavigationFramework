@@ -1,0 +1,177 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
+// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name NVNavigationKit
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import CoreLocation
+import Foundation
+import NVDirectionKit
+@_exported import NVNavigationKit
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public protocol NVMultimodalServiceDelegate : AnyObject {
+  func multimodalService(_ service: NVNavigationKit.NVMultimodalService, didFailToPassTokenWith error: NVDirectionKit.TokenError)
+  func multimodalService(_ service: NVNavigationKit.NVMultimodalService, from route: NVDirectionKit.NVibeMultimodalRoute, shouldGoToNext multimodalStep: NVDirectionKit.NVibeMultimodalStep, with remainingMultimodalStep: Swift.Int) -> Swift.Bool
+  func multimodalService(_ service: NVNavigationKit.NVMultimodalService, from route: NVDirectionKit.NVibeMultimodalRoute, didChange multimodalStep: NVDirectionKit.NVibeMultimodalStep, with remainingMultimodalStep: Swift.Int)
+}
+@objc open class NVMultimodalService : ObjectiveC.NSObject {
+  weak public var delegate: (any NVNavigationKit.NVMultimodalServiceDelegate)?
+  public init(delegate: (any NVNavigationKit.NVMultimodalServiceDelegate)? = nil)
+  @objc deinit
+  public func startMultimodalNavigation(departure: NVDirectionKit.NVibeLocation, arrival: NVDirectionKit.NVibeLocation, route: NVDirectionKit.NVibeMultimodalRoute)
+  public func skipMultimodalStepNavigation()
+  public func stopMultimodalNavigation()
+}
+public enum LocationError {
+  case noConnection, noLocation
+  public static func == (a: NVNavigationKit.LocationError, b: NVNavigationKit.LocationError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension NVNavigationKit.LocationError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+@objc open class NVibeRouteProgress : ObjectiveC.NSObject {
+  public var remainingDistance: Swift.Double
+  public var remainingDuration: Swift.Double
+  public var stepProgress: NVNavigationKit.NVibeStepProgress
+  public var maneuverDetailProgress: NVNavigationKit.NVibeManeuverDetailProgress?
+  public var obstacleProgress: NVNavigationKit.NVibeObstacleProgress?
+  public init(remainingDistance: Swift.Double, remainingDuration: Swift.Double, stepProgress: NVNavigationKit.NVibeStepProgress, maneuverDetailProgress: NVNavigationKit.NVibeManeuverDetailProgress? = nil, obstacleProgress: NVNavigationKit.NVibeObstacleProgress? = nil)
+  @objc deinit
+}
+public protocol NVCompassServiceDelegate : AnyObject {
+  func compassService(_ service: NVNavigationKit.NVCompassService, didCompassUpdateWith direction: CoreLocation.CLLocationDirection, didCompassTrigger: Swift.Bool)
+}
+@objc open class NVCompassService : ObjectiveC.NSObject {
+  weak public var delegate: (any NVNavigationKit.NVCompassServiceDelegate)?
+  public var isCompassRunning: Swift.Bool
+  public var compassDirection: CoreLocation.CLLocationDirection?
+  public init(delegate: (any NVNavigationKit.NVCompassServiceDelegate)? = nil)
+  @objc deinit
+  public func startCompass(direction: CoreLocation.CLLocationDirection? = nil, retrieveDirectionNavigation: Swift.Bool = false)
+  public func stopCompass()
+}
+extension NVDirectionKit.NVibeRoute {
+  public func deleteFirstStep() -> NVDirectionKit.NVibeRoute
+  public func getTransitionInstructionFromIndoorToOutdoor(multimodalRoute: NVDirectionKit.NVibeMultimodalRoute, index: Swift.Int) -> (instruction: Swift.String, vibrations: [NVDirectionKit.NVibeVibration], sideStreet: NVDirectionKit.SideStreet)?
+  public func updateFinalStepForIndoorTransition(multimodalRoute: NVDirectionKit.NVibeMultimodalRoute, index: Swift.Int)
+}
+@objc open class NVibeObstacleProgress : ObjectiveC.NSObject {
+  public var remainingDistance: Swift.Double
+  public var remainingDuration: Swift.Double
+  public var currentObstacle: NVDirectionKit.NVibeObstacle
+  public init(remainingDistance: Swift.Double, remainingDuration: Swift.Double, currentObstacle: NVDirectionKit.NVibeObstacle)
+  @objc deinit
+}
+public protocol NVTransitServiceDelegate : AnyObject {
+  func transitService(_ service: NVNavigationKit.NVTransitService, didFailToPassTokenWith error: NVDirectionKit.TokenError)
+  func transitService(_ service: NVNavigationKit.NVTransitService, didStartWith progress: NVNavigationKit.NVibeTransitProgress)
+  func transitService(_ service: NVNavigationKit.NVTransitService, didUpdate progress: NVNavigationKit.NVibeTransitProgress, with rawLocation: CoreLocation.CLLocation, snappedTo location: CoreLocation.CLLocation)
+  func transitService(_ service: NVNavigationKit.NVTransitService, didStopWith progress: NVNavigationKit.NVibeTransitProgress)
+  func transitService(_ service: NVNavigationKit.NVTransitService, willChange progress: NVNavigationKit.NVibeTransitProgress)
+  func transitService(_ service: NVNavigationKit.NVTransitService, didChange progress: NVNavigationKit.NVibeTransitProgress)
+}
+@objc open class NVTransitService : ObjectiveC.NSObject {
+  weak public var delegate: (any NVNavigationKit.NVTransitServiceDelegate)?
+  public init(delegate: (any NVNavigationKit.NVTransitServiceDelegate)? = nil)
+  @objc deinit
+  public func startTransitNavigation(departure: NVDirectionKit.NVibeLocation, arrival: NVDirectionKit.NVibeLocation, transit: NVDirectionKit.NVibeTransitInformation)
+  public func stopTransitNavigation()
+}
+public protocol NVNavigationServiceDelegate : AnyObject {
+  func navigationService(_ service: NVNavigationKit.NVNavigationService, didStartWith progress: NVNavigationKit.NVibeRouteProgress)
+  func navigationService(_ service: NVNavigationKit.NVNavigationService, didUpdate progress: NVNavigationKit.NVibeRouteProgress, with rawLocation: CoreLocation.CLLocation, snappedTo location: CoreLocation.CLLocation, with uTurn: Swift.Bool)
+  func navigationService(_ service: NVNavigationKit.NVNavigationService, didStopWith progress: NVNavigationKit.NVibeRouteProgress)
+  func navigationService(_ service: NVNavigationKit.NVNavigationService, shouldRerouteFrom location: CoreLocation.CLLocation) -> Swift.Bool
+  func navigationService(_ service: NVNavigationKit.NVNavigationService, didRerouteAlong route: NVDirectionKit.NVibeRoute, with uTurn: Swift.Bool)
+  func navigationService(_ service: NVNavigationKit.NVNavigationService, didUpdateRightDirectionWith progress: NVNavigationKit.NVibeRouteProgress)
+  func navigationService(_ service: NVNavigationKit.NVNavigationService, willChange progress: NVNavigationKit.NVibeRouteProgress)
+  func navigationService(_ service: NVNavigationKit.NVNavigationService, didChange progress: NVNavigationKit.NVibeRouteProgress)
+  func navigationService(_ service: NVNavigationKit.NVNavigationService, didEncounter obstacle: NVDirectionKit.NVibeObstacle)
+  func navigationService(_ service: NVNavigationKit.NVNavigationService, didPauseNavigationOnBadAccuracy: Swift.Bool)
+  func navigationService(_ service: NVNavigationKit.NVNavigationService, didFailToPassTokenWith error: NVDirectionKit.TokenError)
+}
+@objc open class NVNavigationService : ObjectiveC.NSObject {
+  weak public var delegate: (any NVNavigationKit.NVNavigationServiceDelegate)?
+  public var pauseNavigationWhenBadAccuracy: Swift.Bool
+  public var maximumAccuracyAllowed: Swift.Double
+  public var distanceBeforePrepareChangeStep: Swift.Double
+  public var distanceBetweenRightDirection: Swift.Double
+  public init(delegate: (any NVNavigationKit.NVNavigationServiceDelegate)? = nil)
+  @objc deinit
+  public func startNavigation(route: NVDirectionKit.NVibeRoute, rerouteMode: NVNavigationKit.RerouteMode = .DEFAULT, changeStepMode: NVNavigationKit.ChangeStepDetectionMode = .DEFAULT)
+  public func stopNavigation()
+  public func getCurrentLocation(completion: @escaping (CoreLocation.CLLocation?, NVNavigationKit.LocationError?) -> Swift.Void)
+}
+@objc open class NVibeStepProgress : ObjectiveC.NSObject {
+  public var remainingDistance: Swift.Double
+  public var remainingDuration: Swift.Double
+  public var direction: CoreLocation.CLLocationDirection?
+  public var currentStep: NVDirectionKit.NVibeStep
+  public var nextStep: NVDirectionKit.NVibeStep?
+  public init(remainingDistance: Swift.Double, remainingDuration: Swift.Double, direction: CoreLocation.CLLocationDirection?, currentStep: NVDirectionKit.NVibeStep, nextStep: NVDirectionKit.NVibeStep?)
+  @objc deinit
+}
+@objc open class NVibeManeuverDetailProgress : ObjectiveC.NSObject {
+  public var currentManeuverDetail: [NVDirectionKit.NVibeManeuverDetail]
+  public var nextManeuverDetail: [NVDirectionKit.NVibeManeuverDetail]?
+  public init(currentManeuverDetail: [NVDirectionKit.NVibeManeuverDetail], nextManeuverDetail: [NVDirectionKit.NVibeManeuverDetail]? = nil)
+  @objc deinit
+}
+extension Swift.Array where Element == NVDirectionKit.NVibeManeuverDetail {
+  public func getInstruction(language: Swift.String = "en") -> Swift.String
+}
+public enum ImageType : Swift.Int {
+  case LEFT
+  case RIGHT
+  case STRAIGHT
+  case CROSS
+  case UTURN
+  case FINISH
+  case NONE
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum RerouteMode {
+  case DEFAULT
+  case FOLLOW_SAME_ROUTE
+  public static func == (a: NVNavigationKit.RerouteMode, b: NVNavigationKit.RerouteMode) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum ChangeStepDetectionMode {
+  case DEFAULT
+  case PHONE_ORIENTATION
+  public static func == (a: NVNavigationKit.ChangeStepDetectionMode, b: NVNavigationKit.ChangeStepDetectionMode) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc open class NVibeTransitProgress : ObjectiveC.NSObject {
+  public var currentStop: NVDirectionKit.NVibeLocation
+  public var nextStop: NVDirectionKit.NVibeLocation?
+  public var remainingStop: Swift.Int
+  public init(currentStop: NVDirectionKit.NVibeLocation, nextStop: NVDirectionKit.NVibeLocation? = nil, remainingStop: Swift.Int)
+  @objc deinit
+}
+extension NVNavigationKit.LocationError : Swift.Equatable {}
+extension NVNavigationKit.LocationError : Swift.Hashable {}
+extension NVNavigationKit.ImageType : Swift.Equatable {}
+extension NVNavigationKit.ImageType : Swift.Hashable {}
+extension NVNavigationKit.ImageType : Swift.RawRepresentable {}
+extension NVNavigationKit.RerouteMode : Swift.Equatable {}
+extension NVNavigationKit.RerouteMode : Swift.Hashable {}
+extension NVNavigationKit.ChangeStepDetectionMode : Swift.Equatable {}
+extension NVNavigationKit.ChangeStepDetectionMode : Swift.Hashable {}

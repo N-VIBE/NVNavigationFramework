@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/NVNavigationKit-Swift.h</key>
 		<data>
-		4KXbuSPpvM37JRdf9U3IjtBruEQ=
+		iJYRFatggwu6A/gkB0xZkMaAPRE=
 		</data>
 		<key>Headers/NVNavigationKit.h</key>
 		<data>
@@ -23,6 +23,26 @@
 		<key>LocalizableFR.strings</key>
 		<data>
 		KLzVpe/cXfZABLOR/ibNIax3UgQ=
+		</data>
+		<key>Modules/NVNavigationKit.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
+		<data>
+		DQgrZhjUVFnjrp1ce2og6BiKQto=
+		</data>
+		<key>Modules/NVNavigationKit.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
+		<data>
+		w5hV7hP3tAhHO2wgKw9uyZ76qA8=
+		</data>
+		<key>Modules/NVNavigationKit.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
+		<data>
+		GKrBUEzyRCGUY2f4Lav3pNtAtHw=
+		</data>
+		<key>Modules/NVNavigationKit.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
+		<data>
+		w5hV7hP3tAhHO2wgKw9uyZ76qA8=
+		</data>
+		<key>Modules/NVNavigationKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
+		<data>
+		Z8HBlC1zVmcLXTatyXXNNUQIEQg=
 		</data>
 		<key>Modules/NVNavigationKit.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -59,7 +79,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4JZpBjeD4QRMl5X9/0lPuNtMYfJ6X74Rn/Q47VL4wyI=
+			skf7Vl9LOZIi7XoZ5wrcNt9HEbV4WgLT15niD5qhcnE=
 			</data>
 		</dict>
 		<key>Headers/NVNavigationKit.h</key>
@@ -81,6 +101,41 @@
 			<key>hash2</key>
 			<data>
 			fmxDgMkqOVVE0BUXaP0ZYnJCiYuSUoYctOZDuJeXfd0=
+			</data>
+		</dict>
+		<key>Modules/NVNavigationKit.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			beatgB/7njwi7gc09NPyPg0+GC65XJOGwHN0D2398QM=
+			</data>
+		</dict>
+		<key>Modules/NVNavigationKit.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			LgTiVbE0R0wKo4HvmZ04XaHKAA3vsgo8Wcr2AWsk6ng=
+			</data>
+		</dict>
+		<key>Modules/NVNavigationKit.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			J8Cm05QmWw/1BBsgmyE6i8LA0IhJVtZUtkkg6pLBAQU=
+			</data>
+		</dict>
+		<key>Modules/NVNavigationKit.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			LgTiVbE0R0wKo4HvmZ04XaHKAA3vsgo8Wcr2AWsk6ng=
+			</data>
+		</dict>
+		<key>Modules/NVNavigationKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			LHfn2+9Np1B9gBaQLRIO2azDjwdp4jVxn1gtbQ3IINY=
 			</data>
 		</dict>
 		<key>Modules/NVNavigationKit.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
