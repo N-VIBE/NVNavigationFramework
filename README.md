@@ -16,7 +16,7 @@ platform :ios, '13.0'
 target 'TargetNameForYourApp' do
     use_frameworks!
 
-    pod 'NVNavigationKit', '~> 0.17.0'
+    pod 'NVNavigationKit', '~> 0.17.1'
 end
 
 post_install do |installer|

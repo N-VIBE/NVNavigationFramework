@@ -299,7 +299,46 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 #if defined(__OBJC__)
 
-/// NVCompassService is a service to use compass phone
+/// The object you use to start and stop the delivery of compass phone events to your app.
+/// A <code>NVCompassService</code> object is used to manage compass from the phone.
+/// For more information, see <a href="doc:UseCompass">doc:UseCompass</a>.
+/// <h2>Topics</h2>
+/// <h3>Creating a compass service</h3>
+/// <ul>
+///   <li>
+///     <code>init(delegate:)</code>
+///   </li>
+/// </ul>
+/// <h3>Determining the availability of services</h3>
+/// <ul>
+///   <li>
+///     <code>isCompassRunning</code>
+///   </li>
+/// </ul>
+/// <h3>Receiving data from compass services</h3>
+/// <ul>
+///   <li>
+///     <code>delegate</code>
+///   </li>
+///   <li>
+///     <code>NVCompassServiceDelegate</code>
+///   </li>
+/// </ul>
+/// <h3>Running the standard compass service</h3>
+/// <ul>
+///   <li>
+///     <code>startCompass(direction:retrieveDirectionNavigation:)</code>
+///   </li>
+///   <li>
+///     <code>stopCompass()</code>
+///   </li>
+/// </ul>
+/// <h3>Getting recent compass data</h3>
+/// <ul>
+///   <li>
+///     <code>compassDirection</code>
+///   </li>
+/// </ul>
 SWIFT_CLASS("_TtC15NVNavigationKit16NVCompassService")
 @interface NVCompassService : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -308,6 +347,37 @@ SWIFT_CLASS("_TtC15NVNavigationKit16NVCompassService")
 
 
 
+/// The object you use to start and stop the delivery of multimodal events to your app.
+/// A <code>NVMultimodalService</code> object uses <a href="https://n-vibe.github.io/NVDirectionFramework/documentation/nvdirectionkit/nvibemultimodalroute">NVibeMultimodalRoute</a>  to manage multimodal navigation.
+/// For more information, see <a href="doc:UseMultimodalNavigation">doc:UseMultimodalNavigation</a>.
+/// <h2>Topics</h2>
+/// <h3>Creating a multimodal service</h3>
+/// <ul>
+///   <li>
+///     <code>init(delegate:)</code>
+///   </li>
+/// </ul>
+/// <h3>Receiving data from multimodal services</h3>
+/// <ul>
+///   <li>
+///     <code>delegate</code>
+///   </li>
+///   <li>
+///     <code>NVMultimodalServiceDelegate</code>
+///   </li>
+/// </ul>
+/// <h3>Running the standard multimodal service</h3>
+/// <ul>
+///   <li>
+///     <code>startMultimodalNavigation(departure:arrival:route:)</code>
+///   </li>
+///   <li>
+///     <code>stopMultimodalNavigation()</code>
+///   </li>
+///   <li>
+///     <code>skipMultimodalStepNavigation()</code>
+///   </li>
+/// </ul>
 SWIFT_CLASS("_TtC15NVNavigationKit19NVMultimodalService")
 @interface NVMultimodalService : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -316,7 +386,52 @@ SWIFT_CLASS("_TtC15NVNavigationKit19NVMultimodalService")
 
 
 
-/// NVNavigationService is a service to handle walking TurnByTurn
+/// The object you use to start and stop the delivery of navigation events to your app.
+/// A <code>NVNavigationService</code> object uses <a href="https://n-vibe.github.io/NVDirectionFramework/documentation/nvdirectionkit/nviberoute">NVibeRoute</a>  to manage walking navigation.
+/// For more information, see <a href="doc:UseWalkingNavigation">doc:UseWalkingNavigation</a>.
+/// <h2>Topics</h2>
+/// <h3>Creating a navigation service</h3>
+/// <ul>
+///   <li>
+///     <code>init(delegate:)</code>
+///   </li>
+/// </ul>
+/// <h3>Receiving data from navigation services</h3>
+/// <ul>
+///   <li>
+///     <code>delegate</code>
+///   </li>
+///   <li>
+///     <code>NVNavigationServiceDelegate</code>
+///   </li>
+/// </ul>
+/// <h3>Specifying settings</h3>
+/// <ul>
+///   <li>
+///     <code>distanceBeforePrepareChangeStep</code>
+///   </li>
+///   <li>
+///     <code>distanceBetweenRightDirection</code>
+///   </li>
+///   <li>
+///     <code>pauseNavigationWhenBadAccuracy</code>
+///   </li>
+///   <li>
+///     <code>maximumAccuracyAllowed</code>
+///   </li>
+/// </ul>
+/// <h3>Running the standard navigation service</h3>
+/// <ul>
+///   <li>
+///     <code>startNavigation(route:rerouteMode:changeStepMode:)</code>
+///   </li>
+///   <li>
+///     <code>stopNavigation()</code>
+///   </li>
+///   <li>
+///     <code>getCurrentLocation(completion:)</code>
+///   </li>
+/// </ul>
 SWIFT_CLASS("_TtC15NVNavigationKit19NVNavigationService")
 @interface NVNavigationService : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -325,6 +440,34 @@ SWIFT_CLASS("_TtC15NVNavigationKit19NVNavigationService")
 
 
 
+/// The object you use to start and stop the delivery of transit events to your app.
+/// A <code>NVTransitService</code> object uses <a href="https://n-vibe.github.io/NVDirectionFramework/documentation/nvdirectionkit/nvibetransitinformation">NVibeTransitInformation</a>  to manage transit navigation.
+/// For more information, see <a href="doc:UseTransitNavigation">doc:UseTransitNavigation</a>.
+/// <h2>Topics</h2>
+/// <h3>Creating a transit service</h3>
+/// <ul>
+///   <li>
+///     <code>init(delegate:)</code>
+///   </li>
+/// </ul>
+/// <h3>Receiving data from transit services</h3>
+/// <ul>
+///   <li>
+///     <code>delegate</code>
+///   </li>
+///   <li>
+///     <code>NVTransitServiceDelegate</code>
+///   </li>
+/// </ul>
+/// <h3>Running the standard transit service</h3>
+/// <ul>
+///   <li>
+///     <code>startTransitNavigation(departure:arrival:transit:)</code>
+///   </li>
+///   <li>
+///     <code>stopTransitNavigation()</code>
+///   </li>
+/// </ul>
 SWIFT_CLASS("_TtC15NVNavigationKit16NVTransitService")
 @interface NVTransitService : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -340,6 +483,7 @@ SWIFT_CLASS("_TtC15NVNavigationKit27NVibeManeuverDetailProgress")
 @end
 
 
+/// The user’s progress along the walking step toward the next obstacle.
 SWIFT_CLASS("_TtC15NVNavigationKit21NVibeObstacleProgress")
 @interface NVibeObstacleProgress : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -348,6 +492,7 @@ SWIFT_CLASS("_TtC15NVNavigationKit21NVibeObstacleProgress")
 
 
 
+/// The user’s progress along the walking route.
 SWIFT_CLASS("_TtC15NVNavigationKit18NVibeRouteProgress")
 @interface NVibeRouteProgress : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -356,6 +501,7 @@ SWIFT_CLASS("_TtC15NVNavigationKit18NVibeRouteProgress")
 
 
 
+/// The user’s progress along the walking step.
 SWIFT_CLASS("_TtC15NVNavigationKit17NVibeStepProgress")
 @interface NVibeStepProgress : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -363,6 +509,7 @@ SWIFT_CLASS("_TtC15NVNavigationKit17NVibeStepProgress")
 @end
 
 
+/// The user’s progress along the transit.
 SWIFT_CLASS("_TtC15NVNavigationKit20NVibeTransitProgress")
 @interface NVibeTransitProgress : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -678,7 +825,46 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 #if defined(__OBJC__)
 
-/// NVCompassService is a service to use compass phone
+/// The object you use to start and stop the delivery of compass phone events to your app.
+/// A <code>NVCompassService</code> object is used to manage compass from the phone.
+/// For more information, see <a href="doc:UseCompass">doc:UseCompass</a>.
+/// <h2>Topics</h2>
+/// <h3>Creating a compass service</h3>
+/// <ul>
+///   <li>
+///     <code>init(delegate:)</code>
+///   </li>
+/// </ul>
+/// <h3>Determining the availability of services</h3>
+/// <ul>
+///   <li>
+///     <code>isCompassRunning</code>
+///   </li>
+/// </ul>
+/// <h3>Receiving data from compass services</h3>
+/// <ul>
+///   <li>
+///     <code>delegate</code>
+///   </li>
+///   <li>
+///     <code>NVCompassServiceDelegate</code>
+///   </li>
+/// </ul>
+/// <h3>Running the standard compass service</h3>
+/// <ul>
+///   <li>
+///     <code>startCompass(direction:retrieveDirectionNavigation:)</code>
+///   </li>
+///   <li>
+///     <code>stopCompass()</code>
+///   </li>
+/// </ul>
+/// <h3>Getting recent compass data</h3>
+/// <ul>
+///   <li>
+///     <code>compassDirection</code>
+///   </li>
+/// </ul>
 SWIFT_CLASS("_TtC15NVNavigationKit16NVCompassService")
 @interface NVCompassService : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -687,6 +873,37 @@ SWIFT_CLASS("_TtC15NVNavigationKit16NVCompassService")
 
 
 
+/// The object you use to start and stop the delivery of multimodal events to your app.
+/// A <code>NVMultimodalService</code> object uses <a href="https://n-vibe.github.io/NVDirectionFramework/documentation/nvdirectionkit/nvibemultimodalroute">NVibeMultimodalRoute</a>  to manage multimodal navigation.
+/// For more information, see <a href="doc:UseMultimodalNavigation">doc:UseMultimodalNavigation</a>.
+/// <h2>Topics</h2>
+/// <h3>Creating a multimodal service</h3>
+/// <ul>
+///   <li>
+///     <code>init(delegate:)</code>
+///   </li>
+/// </ul>
+/// <h3>Receiving data from multimodal services</h3>
+/// <ul>
+///   <li>
+///     <code>delegate</code>
+///   </li>
+///   <li>
+///     <code>NVMultimodalServiceDelegate</code>
+///   </li>
+/// </ul>
+/// <h3>Running the standard multimodal service</h3>
+/// <ul>
+///   <li>
+///     <code>startMultimodalNavigation(departure:arrival:route:)</code>
+///   </li>
+///   <li>
+///     <code>stopMultimodalNavigation()</code>
+///   </li>
+///   <li>
+///     <code>skipMultimodalStepNavigation()</code>
+///   </li>
+/// </ul>
 SWIFT_CLASS("_TtC15NVNavigationKit19NVMultimodalService")
 @interface NVMultimodalService : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -695,7 +912,52 @@ SWIFT_CLASS("_TtC15NVNavigationKit19NVMultimodalService")
 
 
 
-/// NVNavigationService is a service to handle walking TurnByTurn
+/// The object you use to start and stop the delivery of navigation events to your app.
+/// A <code>NVNavigationService</code> object uses <a href="https://n-vibe.github.io/NVDirectionFramework/documentation/nvdirectionkit/nviberoute">NVibeRoute</a>  to manage walking navigation.
+/// For more information, see <a href="doc:UseWalkingNavigation">doc:UseWalkingNavigation</a>.
+/// <h2>Topics</h2>
+/// <h3>Creating a navigation service</h3>
+/// <ul>
+///   <li>
+///     <code>init(delegate:)</code>
+///   </li>
+/// </ul>
+/// <h3>Receiving data from navigation services</h3>
+/// <ul>
+///   <li>
+///     <code>delegate</code>
+///   </li>
+///   <li>
+///     <code>NVNavigationServiceDelegate</code>
+///   </li>
+/// </ul>
+/// <h3>Specifying settings</h3>
+/// <ul>
+///   <li>
+///     <code>distanceBeforePrepareChangeStep</code>
+///   </li>
+///   <li>
+///     <code>distanceBetweenRightDirection</code>
+///   </li>
+///   <li>
+///     <code>pauseNavigationWhenBadAccuracy</code>
+///   </li>
+///   <li>
+///     <code>maximumAccuracyAllowed</code>
+///   </li>
+/// </ul>
+/// <h3>Running the standard navigation service</h3>
+/// <ul>
+///   <li>
+///     <code>startNavigation(route:rerouteMode:changeStepMode:)</code>
+///   </li>
+///   <li>
+///     <code>stopNavigation()</code>
+///   </li>
+///   <li>
+///     <code>getCurrentLocation(completion:)</code>
+///   </li>
+/// </ul>
 SWIFT_CLASS("_TtC15NVNavigationKit19NVNavigationService")
 @interface NVNavigationService : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -704,6 +966,34 @@ SWIFT_CLASS("_TtC15NVNavigationKit19NVNavigationService")
 
 
 
+/// The object you use to start and stop the delivery of transit events to your app.
+/// A <code>NVTransitService</code> object uses <a href="https://n-vibe.github.io/NVDirectionFramework/documentation/nvdirectionkit/nvibetransitinformation">NVibeTransitInformation</a>  to manage transit navigation.
+/// For more information, see <a href="doc:UseTransitNavigation">doc:UseTransitNavigation</a>.
+/// <h2>Topics</h2>
+/// <h3>Creating a transit service</h3>
+/// <ul>
+///   <li>
+///     <code>init(delegate:)</code>
+///   </li>
+/// </ul>
+/// <h3>Receiving data from transit services</h3>
+/// <ul>
+///   <li>
+///     <code>delegate</code>
+///   </li>
+///   <li>
+///     <code>NVTransitServiceDelegate</code>
+///   </li>
+/// </ul>
+/// <h3>Running the standard transit service</h3>
+/// <ul>
+///   <li>
+///     <code>startTransitNavigation(departure:arrival:transit:)</code>
+///   </li>
+///   <li>
+///     <code>stopTransitNavigation()</code>
+///   </li>
+/// </ul>
 SWIFT_CLASS("_TtC15NVNavigationKit16NVTransitService")
 @interface NVTransitService : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -719,6 +1009,7 @@ SWIFT_CLASS("_TtC15NVNavigationKit27NVibeManeuverDetailProgress")
 @end
 
 
+/// The user’s progress along the walking step toward the next obstacle.
 SWIFT_CLASS("_TtC15NVNavigationKit21NVibeObstacleProgress")
 @interface NVibeObstacleProgress : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -727,6 +1018,7 @@ SWIFT_CLASS("_TtC15NVNavigationKit21NVibeObstacleProgress")
 
 
 
+/// The user’s progress along the walking route.
 SWIFT_CLASS("_TtC15NVNavigationKit18NVibeRouteProgress")
 @interface NVibeRouteProgress : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -735,6 +1027,7 @@ SWIFT_CLASS("_TtC15NVNavigationKit18NVibeRouteProgress")
 
 
 
+/// The user’s progress along the walking step.
 SWIFT_CLASS("_TtC15NVNavigationKit17NVibeStepProgress")
 @interface NVibeStepProgress : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -742,6 +1035,7 @@ SWIFT_CLASS("_TtC15NVNavigationKit17NVibeStepProgress")
 @end
 
 
+/// The user’s progress along the transit.
 SWIFT_CLASS("_TtC15NVNavigationKit20NVibeTransitProgress")
 @interface NVibeTransitProgress : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;

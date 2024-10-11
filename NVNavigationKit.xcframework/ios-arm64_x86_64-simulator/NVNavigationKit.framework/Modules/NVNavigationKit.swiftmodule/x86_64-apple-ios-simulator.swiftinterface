@@ -17,6 +17,15 @@ public protocol NVMultimodalServiceDelegate : AnyObject {
 }
 @objc open class NVMultimodalService : ObjectiveC.NSObject {
   weak public var delegate: (any NVNavigationKit.NVMultimodalServiceDelegate)?
+  public var previousMultimodalStep: NVDirectionKit.NVibeMultimodalStep? {
+    get
+  }
+  public var currentMultimodalStep: NVDirectionKit.NVibeMultimodalStep? {
+    get
+  }
+  public var nextMultimodalStep: NVDirectionKit.NVibeMultimodalStep? {
+    get
+  }
   public init(delegate: (any NVNavigationKit.NVMultimodalServiceDelegate)? = nil)
   @objc deinit
   public func startMultimodalNavigation(departure: NVDirectionKit.NVibeLocation, arrival: NVDirectionKit.NVibeLocation, route: NVDirectionKit.NVibeMultimodalRoute)
@@ -24,7 +33,8 @@ public protocol NVMultimodalServiceDelegate : AnyObject {
   public func stopMultimodalNavigation()
 }
 public enum LocationError {
-  case noConnection, noLocation
+  case noConnection
+  case noLocation
   public static func == (a: NVNavigationKit.LocationError, b: NVNavigationKit.LocationError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -40,9 +50,9 @@ extension NVNavigationKit.LocationError : Foundation.LocalizedError {
   public var remainingDistance: Swift.Double
   public var remainingDuration: Swift.Double
   public var stepProgress: NVNavigationKit.NVibeStepProgress
-  public var maneuverDetailProgress: NVNavigationKit.NVibeManeuverDetailProgress?
+  @_documentation(visibility: private) public var maneuverDetailProgress: NVNavigationKit.NVibeManeuverDetailProgress?
   public var obstacleProgress: NVNavigationKit.NVibeObstacleProgress?
-  public init(remainingDistance: Swift.Double, remainingDuration: Swift.Double, stepProgress: NVNavigationKit.NVibeStepProgress, maneuverDetailProgress: NVNavigationKit.NVibeManeuverDetailProgress? = nil, obstacleProgress: NVNavigationKit.NVibeObstacleProgress? = nil)
+  @_documentation(visibility: private) public init(remainingDistance: Swift.Double, remainingDuration: Swift.Double, stepProgress: NVNavigationKit.NVibeStepProgress, maneuverDetailProgress: NVNavigationKit.NVibeManeuverDetailProgress? = nil, obstacleProgress: NVNavigationKit.NVibeObstacleProgress? = nil)
   @objc deinit
 }
 public protocol NVCompassServiceDelegate : AnyObject {
@@ -51,6 +61,7 @@ public protocol NVCompassServiceDelegate : AnyObject {
 @objc open class NVCompassService : ObjectiveC.NSObject {
   weak public var delegate: (any NVNavigationKit.NVCompassServiceDelegate)?
   public var isCompassRunning: Swift.Bool
+  public var compassTreshold: Swift.Double
   public var compassDirection: CoreLocation.CLLocationDirection?
   public init(delegate: (any NVNavigationKit.NVCompassServiceDelegate)? = nil)
   @objc deinit
@@ -58,15 +69,15 @@ public protocol NVCompassServiceDelegate : AnyObject {
   public func stopCompass()
 }
 extension NVDirectionKit.NVibeRoute {
-  public func deleteFirstStep() -> NVDirectionKit.NVibeRoute
-  public func getTransitionInstructionFromIndoorToOutdoor(multimodalRoute: NVDirectionKit.NVibeMultimodalRoute, index: Swift.Int) -> (instruction: Swift.String, vibrations: [NVDirectionKit.NVibeVibration], sideStreet: NVDirectionKit.SideStreet)?
-  public func updateFinalStepForIndoorTransition(multimodalRoute: NVDirectionKit.NVibeMultimodalRoute, index: Swift.Int)
+  @_documentation(visibility: private) public func deleteFirstStep() -> NVDirectionKit.NVibeRoute
+  @_documentation(visibility: private) public func getTransitionInstructionFromIndoorToOutdoor(multimodalRoute: NVDirectionKit.NVibeMultimodalRoute, index: Swift.Int) -> (instruction: Swift.String, vibrations: [NVDirectionKit.NVibeVibration], sideStreet: NVDirectionKit.SideStreet)?
+  @_documentation(visibility: private) public func updateFinalStepForIndoorTransition(multimodalRoute: NVDirectionKit.NVibeMultimodalRoute, index: Swift.Int)
 }
 @objc open class NVibeObstacleProgress : ObjectiveC.NSObject {
   public var remainingDistance: Swift.Double
   public var remainingDuration: Swift.Double
   public var currentObstacle: NVDirectionKit.NVibeObstacle
-  public init(remainingDistance: Swift.Double, remainingDuration: Swift.Double, currentObstacle: NVDirectionKit.NVibeObstacle)
+  @_documentation(visibility: private) public init(remainingDistance: Swift.Double, remainingDuration: Swift.Double, currentObstacle: NVDirectionKit.NVibeObstacle)
   @objc deinit
 }
 public protocol NVTransitServiceDelegate : AnyObject {
@@ -79,6 +90,15 @@ public protocol NVTransitServiceDelegate : AnyObject {
 }
 @objc open class NVTransitService : ObjectiveC.NSObject {
   weak public var delegate: (any NVNavigationKit.NVTransitServiceDelegate)?
+  public var transitInformation: NVDirectionKit.NVibeTransitInformation? {
+    get
+  }
+  public var currentStop: NVDirectionKit.NVibeLocation? {
+    get
+  }
+  public var nextStop: NVDirectionKit.NVibeLocation? {
+    get
+  }
   public init(delegate: (any NVNavigationKit.NVTransitServiceDelegate)? = nil)
   @objc deinit
   public func startTransitNavigation(departure: NVDirectionKit.NVibeLocation, arrival: NVDirectionKit.NVibeLocation, transit: NVDirectionKit.NVibeTransitInformation)
@@ -99,10 +119,35 @@ public protocol NVNavigationServiceDelegate : AnyObject {
 }
 @objc open class NVNavigationService : ObjectiveC.NSObject {
   weak public var delegate: (any NVNavigationKit.NVNavigationServiceDelegate)?
-  public var pauseNavigationWhenBadAccuracy: Swift.Bool
-  public var maximumAccuracyAllowed: Swift.Double
-  public var distanceBeforePrepareChangeStep: Swift.Double
-  public var distanceBetweenRightDirection: Swift.Double
+  public var pauseNavigationWhenBadAccuracy: Swift.Bool {
+    get
+    set
+  }
+  public var maximumAccuracyAllowed: Swift.Double {
+    get
+    set
+  }
+  public var distanceBeforePrepareChangeStep: Swift.Double {
+    get
+    set
+  }
+  public var distanceBeforeChangeStep: Swift.Double {
+    get
+    set
+  }
+  public var distanceBetweenRightDirection: Swift.Double {
+    get
+    set
+  }
+  public var isLocationAccurate: Swift.Bool {
+    get
+  }
+  public var currentRoute: NVDirectionKit.NVibeRoute {
+    get
+  }
+  public var currentRouteProgress: NVNavigationKit.NVibeRouteProgress {
+    get
+  }
   public init(delegate: (any NVNavigationKit.NVNavigationServiceDelegate)? = nil)
   @objc deinit
   public func startNavigation(route: NVDirectionKit.NVibeRoute, rerouteMode: NVNavigationKit.RerouteMode = .DEFAULT, changeStepMode: NVNavigationKit.ChangeStepDetectionMode = .DEFAULT)
@@ -115,19 +160,19 @@ public protocol NVNavigationServiceDelegate : AnyObject {
   public var direction: CoreLocation.CLLocationDirection?
   public var currentStep: NVDirectionKit.NVibeStep
   public var nextStep: NVDirectionKit.NVibeStep?
-  public init(remainingDistance: Swift.Double, remainingDuration: Swift.Double, direction: CoreLocation.CLLocationDirection?, currentStep: NVDirectionKit.NVibeStep, nextStep: NVDirectionKit.NVibeStep?)
+  @_documentation(visibility: private) public init(remainingDistance: Swift.Double, remainingDuration: Swift.Double, direction: CoreLocation.CLLocationDirection?, currentStep: NVDirectionKit.NVibeStep, nextStep: NVDirectionKit.NVibeStep?)
   @objc deinit
 }
-@objc open class NVibeManeuverDetailProgress : ObjectiveC.NSObject {
+@objc @_documentation(visibility: private) open class NVibeManeuverDetailProgress : ObjectiveC.NSObject {
   public var currentManeuverDetail: [NVDirectionKit.NVibeManeuverDetail]
   public var nextManeuverDetail: [NVDirectionKit.NVibeManeuverDetail]?
   public init(currentManeuverDetail: [NVDirectionKit.NVibeManeuverDetail], nextManeuverDetail: [NVDirectionKit.NVibeManeuverDetail]? = nil)
   @objc deinit
 }
 extension Swift.Array where Element == NVDirectionKit.NVibeManeuverDetail {
-  public func getInstruction(language: Swift.String = "en") -> Swift.String
+  @_documentation(visibility: private) public func getInstruction(language: Swift.String = "en") -> Swift.String
 }
-public enum ImageType : Swift.Int {
+@_documentation(visibility: private) public enum ImageType : Swift.Int {
   case LEFT
   case RIGHT
   case STRAIGHT
@@ -150,7 +195,7 @@ public enum RerouteMode {
     get
   }
 }
-public enum ChangeStepDetectionMode {
+@_documentation(visibility: private) public enum ChangeStepDetectionMode {
   case DEFAULT
   case PHONE_ORIENTATION
   public static func == (a: NVNavigationKit.ChangeStepDetectionMode, b: NVNavigationKit.ChangeStepDetectionMode) -> Swift.Bool
@@ -163,7 +208,7 @@ public enum ChangeStepDetectionMode {
   public var currentStop: NVDirectionKit.NVibeLocation
   public var nextStop: NVDirectionKit.NVibeLocation?
   public var remainingStop: Swift.Int
-  public init(currentStop: NVDirectionKit.NVibeLocation, nextStop: NVDirectionKit.NVibeLocation? = nil, remainingStop: Swift.Int)
+  @_documentation(visibility: private) public init(currentStop: NVDirectionKit.NVibeLocation, nextStop: NVDirectionKit.NVibeLocation? = nil, remainingStop: Swift.Int)
   @objc deinit
 }
 extension NVNavigationKit.LocationError : Swift.Equatable {}
